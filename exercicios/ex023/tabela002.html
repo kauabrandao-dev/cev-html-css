@@ -11,6 +11,7 @@
       table {
         width: 500px;
         border-collapse: collapse;
+        position: relative;
       }
 
       caption {
@@ -18,6 +19,12 @@
         font-weight: bold;
         padding: 10px;
         background-color: #d3d3d3;
+      }
+
+      thead > tr > th {
+        background-color: #808080;
+        position: sticky;
+        top: 0;
       }
 
       tbody tr:nth-child(odd) {
