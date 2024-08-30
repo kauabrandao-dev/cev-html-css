@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: sans-serif;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: sans-serif;
+      }
 
-    table {
-      width: 500px;
-      border-collapse: collapse;
-    }
+      table {
+        width: 500px;
+        border-collapse: collapse;
+      }
 
-    td, th {
-      border: 1px solid #000;
-      padding: 10px;
-    }
+      caption {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 10px;
+        background-color: #d3d3d3;
+      }
 
-    thead, tfoot {
-      background-color: #808080;
-    }
-  </style>
-  <title>Tabelas</title>
-</head>
-<body>
-  <h1>Uso de tabelas grandes</h1>
-  <!--
+      td,
+      th {
+        border: 1px solid #000;
+        padding: 10px;
+      }
+
+      td.habs-num {
+        text-align: right;
+      }
+
+      thead,
+      tfoot {
+        background-color: #808080;
+      }
+    </style>
+    <title>Tabelas</title>
+  </head>
+  <body>
+    <h1>Uso de tabelas grandes</h1>
+    <!--
     Anatomia de tabelas grandes:
-    Table: 
+    <table>:
+      <caption>
       <thead> -> <tr>, <td>, <th>
       <tbody> -> <tr>, <td>, <th>
       <tfoot> -> <tr>, <td>, <th>
     Legenda:
+      <caption> -> Legenda
       <thead> -> Table head -> Cabeça da tabela
       <tbody> -> Table body -> Corpo da tabela
       <tfoot> -> Table foot -> Pé da tabela
@@ -40,129 +55,132 @@
         <td> -> Table data -> Dado da tabela
         <th> -> Table header -> Cabeçalho da tabela
   -->
-  <table>
-    <thead>
-      <tr>
-        <th>Estado</th>
-        <th>População</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>São Paulo</td>
-        <td>44 411 238</td>
-      </tr>
-      <tr>
-        <td>Minas Gerais</td>
-        <td>20 538 718</td>
-      </tr>
-      <tr>
-        <td>Rio de Janeiro</td>
-        <td>16 054 524</td>
-      </tr>
-      <tr>
-        <td>Bahia</td>
-        <td>14 141 626</td>
-      </tr>
-      <tr>
-        <td>Paraná</td>
-        <td>11 444 380</td>
-      </tr>
-      <tr>
-        <td>Rio Grande do Sul</td>
-        <td>10 882 965</td>
-      </tr>
-      <tr>
-        <td>Pernambuco</td>
-        <td>9 058 931</td>
-      </tr>
-      <tr>
-        <td>Ceará</td>
-        <td>8 794 957</td>
-      </tr>
-      <tr>
-        <td>Pará</td>
-        <td>8 121 025</td>
-      </tr>
-      <tr>
-        <td>Santa Catarina</td>
-        <td>7 610 361</td>
-      </tr>
-      <tr>
-        <td>Goiás</td>
-        <td>7 056 495</td>
-      </tr>
-      <tr>
-        <td>Maranhão</td>
-        <td>6 775 805</td>
-      </tr>
-      <tr>
-        <td>Amazonas</td>
-        <td>3 941 613</td>
-      </tr>
-      <tr>
-        <td>Paraíba</td>
-        <td>3 974 687</td>
-      </tr>
-      <tr>
-        <td>Espírito Santo</td>
-        <td>3 833 712</td>
-      </tr>
-      <tr>
-        <td>Mato Grosso</td>
-        <td>3 658 649</td>
-      </tr>
-      <tr>
-        <td>Rio Grande do Norte</td>
-        <td>3 302 729</td>
-      </tr>
-      <tr>
-        <td>Piauí</td>
-        <td>3 271 199</td>
-      </tr>
-      <tr>
-        <td>Alagoas</td>
-        <td>3 127 683</td>
-      </tr>
-      <tr>
-        <td>Distrito Federal</td>
-        <td>2 817 381</td>
-      </tr>
-      <tr>
-        <td>Mato Grosso do Sul</td>
-        <td>2 757 013</td>
-      </tr>
-      <tr>
-        <td>Sergipe</td>
-        <td>2 209 558</td>
-      </tr>
-      <tr>
-        <td>Rondônia</td>
-        <td>1 581 196</td>
-      </tr>
-      <tr>
-        <td>Tocantins</td>
-        <td>1 511 460</td>
-      </tr>
-      <tr>
-        <td>Acre</td>
-        <td>830 018</td>
-      </tr>
-      <tr>
-        <td>Amapá</td>
-        <td>733 759</td>
-      </tr>
-      <tr>
-        <td>Roraima</td>
-        <td>636 707</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <th>Total de habitantes:</th>
-        <td><strong>203 080 756</strong></td>
-      </tr>
-    </tfoot>
-  </table>
-</body>
+    <table>
+      <caption>
+        População das Unidades Federativas
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">Estado</th>
+          <th scope="col" style="width: 100px;">População</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>São Paulo</td>
+          <td class="habs-num">44 411 238</td>
+        </tr>
+        <tr>
+          <td>Minas Gerais</td>
+          <td class="habs-num">20 538 718</td>
+        </tr>
+        <tr>
+          <td>Rio de Janeiro</td>
+          <td class="habs-num">16 054 524</td>
+        </tr>
+        <tr>
+          <td>Bahia</td>
+          <td class="habs-num">14 141 626</td>
+        </tr>
+        <tr>
+          <td>Paraná</td>
+          <td class="habs-num">11 444 380</td>
+        </tr>
+        <tr>
+          <td>Rio Grande do Sul</td>
+          <td class="habs-num">10 882 965</td>
+        </tr>
+        <tr>
+          <td>Pernambuco</td>
+          <td class="habs-num">9 058 931</td>
+        </tr>
+        <tr>
+          <td>Ceará</td>
+          <td class="habs-num">8 794 957</td>
+        </tr>
+        <tr>
+          <td>Pará</td>
+          <td class="habs-num">8 121 025</td>
+        </tr>
+        <tr>
+          <td>Santa Catarina</td>
+          <td class="habs-num">7 610 361</td>
+        </tr>
+        <tr>
+          <td>Goiás</td>
+          <td class="habs-num">7 056 495</td>
+        </tr>
+        <tr>
+          <td>Maranhão</td>
+          <td class="habs-num">6 775 805</td>
+        </tr>
+        <tr>
+          <td>Amazonas</td>
+          <td class="habs-num">3 941 613</td>
+        </tr>
+        <tr>
+          <td>Paraíba</td>
+          <td class="habs-num">3 974 687</td>
+        </tr>
+        <tr>
+          <td>Espírito Santo</td>
+          <td class="habs-num">3 833 712</td>
+        </tr>
+        <tr>
+          <td>Mato Grosso</td>
+          <td class="habs-num">3 658 649</td>
+        </tr>
+        <tr>
+          <td>Rio Grande do Norte</td>
+          <td class="habs-num">3 302 729</td>
+        </tr>
+        <tr>
+          <td>Piauí</td>
+          <td class="habs-num">3 271 199</td>
+        </tr>
+        <tr>
+          <td>Alagoas</td>
+          <td class="habs-num">3 127 683</td>
+        </tr>
+        <tr>
+          <td>Distrito Federal</td>
+          <td class="habs-num">2 817 381</td>
+        </tr>
+        <tr>
+          <td>Mato Grosso do Sul</td>
+          <td class="habs-num">2 757 013</td>
+        </tr>
+        <tr>
+          <td>Sergipe</td>
+          <td class="habs-num">2 209 558</td>
+        </tr>
+        <tr>
+          <td>Rondônia</td>
+          <td class="habs-num">1 581 196</td>
+        </tr>
+        <tr>
+          <td>Tocantins</td>
+          <td class="habs-num">1 511 460</td>
+        </tr>
+        <tr>
+          <td>Acre</td>
+          <td class="habs-num">830 018</td>
+        </tr>
+        <tr>
+          <td>Amapá</td>
+          <td class="habs-num">733 759</td>
+        </tr>
+        <tr>
+          <td>Roraima</td>
+          <td class="habs-num">636 707</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row">Total de habitantes:</th>
+          <td class="habs-num"><strong>203 080 756</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
 </html>
